@@ -29,6 +29,8 @@
     "@eslint/config-array": "^0.16.0",
     "@eslint/object-schema": "^2.1.4",
     "@ionic/angular": "^8.2.2",
+    "@ionic/storage-angular": "^4.0.0",
+    "cordova-sqlite-storage": "^6.1.0",
     "domsanitizer": "^0.2.3",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",

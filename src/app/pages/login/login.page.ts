@@ -1,5 +1,7 @@
 import { Component,  ElementRef,  OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { NavController } from '@ionic/angular';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
  import { register } from 'swiper/element/bundle';
 
@@ -14,12 +16,15 @@ register();
 
 
 
+
 export class LoginPage implements OnInit {
-  
+
   
   @ViewChild('swiperPrincipal') swiperRef!: ElementRef;
 
-  constructor() { 
+  constructor(private usuarioService: UsuarioService,
+              private navController: NavController
+  ) { 
 
   }
 
@@ -59,6 +64,11 @@ export class LoginPage implements OnInit {
     },
 ];
 
+  loginUser = {
+    email: 'prueba7@hotmail.com',
+    password: 'passs'
+  }
+
   // myswiper = {
   //   allowTouchMove: false,
   //   cssMode: true,
@@ -92,9 +102,25 @@ export class LoginPage implements OnInit {
 
   }
 
-  login (fLogin: NgForm) {
+  async login (fLogin: NgForm) {
+
+    if( fLogin.invalid ){
+      return;
+    }
+
+    const valido = await this.usuarioService.login( this.loginUser.email, this.loginUser.password);
     console.log(fLogin.valid);
+    console.log(this.loginUser);
+
+    if(valido){
+      //navegar al tabs
+      this.navController.navigateRoot('/main/tabs/tab1', { animated: true });
+    }else{
+      //mostrar alerta de usuario y contraseña no correcto
+    }
   }
+
+
 
   registro ( fRegistro: NgForm) {
     console.log(fRegistro.valid);
