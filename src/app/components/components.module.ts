@@ -7,14 +7,17 @@ import { IonicModule } from '@ionic/angular';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PipesModule } from '../pipes/pipes.module';
+import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
 
 @NgModule({
   declarations: [
     PostsComponent,
-    PostComponent
+    PostComponent,
+    AvatarSelectorComponent
   ],
   exports: [
-    PostsComponent
+    PostsComponent,
+    AvatarSelectorComponent
   ],
   imports: [
     CommonModule,
