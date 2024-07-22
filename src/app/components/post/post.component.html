@@ -11,24 +11,26 @@
     
   </ion-item>
 
+  <app-mapa [coords]="post.coords" ></app-mapa> 
   <ion-item>
     <ion-icon slot="start" name="heart-outline"></ion-icon>
     <ion-icon slot="end" name="bookmark-outline"></ion-icon>
   </ion-item>
   
-  <swiper-container>
+  <!-- <swiper-container>
     <swiper-slide class="image-slide" [style]=" img1 | domSanitizer">
     </swiper-slide>
     <swiper-slide class="image-slide" [style]=" img2 | domSanitizer">
     </swiper-slide>
     <swiper-slide class="image-slide" [style]=" img3 | domSanitizer">
     </swiper-slide>
-  </swiper-container>
-   <ion-slides mode="ios" pager="ios" scrollbar="ios">
+  </swiper-container> -->
+
+   <!-- <ion-slides mode="ios" pager="ios" scrollbar="ios">
     <ion-slide>
       <h1>Awesome Slide Content</h1>
     </ion-slide>
-   </ion-slides>
+   </ion-slides> -->
   <ion-item lines="none">
     <ion-label text-wrap>
       {{ post.mensaje }}
